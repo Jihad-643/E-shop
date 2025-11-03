@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shop</title>
+
+    <!-- ✅ Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ DaisyUI Full CDN -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <header>
+        <!-- NavBar From DaisyUI -->
+        <section class="mx-auto">
+            <div class="navbar bg-base-100 shadow-sm justify-between top-0 z-10 fixed">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-green-800 font-medium">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#review">Reviews</a></li>
+                            <li><a href="#cart">Cart</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <img src="image/Logo.png" alt="" class="h-20 px-5">
+                </div>
+
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-green-800 font-medium text-[16px]">
+                        <li><a href="#home" class="link link-hover hover:text-white hover:bg-green-600">Home</a></li>
+                        <li><a href="#products" class="link link-hover hover:text-white hover:bg-green-600">Products</a>
+                        </li>
+                        <li><a href="#review" class="link link-hover hover:text-white hover:bg-green-600">Reviews</a>
+                        </li>
+                        <li><a href="#cart" class="link link-hover hover:text-white hover:bg-green-600">Cart</a></li>
+                        <li><a href="#about" class="link link-hover hover:text-white hover:bg-green-600">About Us</a>
+                        </li>
+                        <li><a href="#contact" class="link link-hover hover:text-white hover:bg-green-600">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="flex-none">
+                        <div class="dropdown dropdown-end">
+                            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                                <div class="indicator">
+                                    <span id="cart-count"
+                                        class="badge badge-sm indicator-item bg-red-500 text-white">0</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- slide banner -->
+        <section id="home" class="mx-8 my-16">
+            <div class="carousel w-full lg:h-[700px]">
+                <div id="slide1" class="carousel-item relative w-full">
+                    <img src="image/slide2.webp " class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="image/slide .webp" class="w-full h-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="image/slide3.webp" class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" class="carousel-item relative w-full">
+                    <img src="image/slide4.webp" class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- Products -->
+        <section class="px-20" id="products">
+            <h1 class="text-center text-4xl lg:text-6xl font-bold m-20">Our Products</h1>
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4 ">
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Jwellary.jpeg" alt="Jewelry" class="w-full h-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">✨ Heritage Gold Necklace</h2>
+                        <p>Exquisite Bengali craftsmanship for a timeless elegant look. Perfect for weddings and grand
+                            occasions.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 75,000</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Apple-iPhone-17-Pro-Max-.webp" alt="iPhone"
+                            class="w-full h-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">📱 iPhone 17 Pro Max</h2>
+                        <p>Experience the next generation of mobile technology with stunning A19 Bionic features and
+                            Cinematic display.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,85,990</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Ladies Bag_.jpg" alt="Handbag" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">👜 Premium Ivory Handbag</h2>
+                        <p>The perfect accessory for every outfit, combining fashion, utility, and superior quality
+                            finish.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 4,499</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/adidas-originals-shoe-sneakers-white-adidas.jpg" alt="Shoes"
+                            class="w-full h-full object-cover" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">👟 Lightweight Running Sneaker</h2>
+                        <p>Step up your game with our durable and comfortable footwear. Maximum cushioning for
+                            performance.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 5,950</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Sound BOx.webp" alt="Speaker" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">🔊 Portable Bluetooth Speaker</h2>
+                        <p>Immerse yourself in rich, deep audio with long-lasting battery and high-fidelity sound.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 2,999</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Vase.jpeg" alt="Vase" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">🏺 Elegant Ceramic Vase</h2>
+                        <p>A modern Nordic-style centerpiece to elevate your home decor. Perfect for fresh or dried
+                            flowers.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,250</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/USB_.jpg " alt="USB" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">💾 128GB High-Speed USB</h2>
+                        <p>Ultra-fast data transfer with secure encryption. Reliable storage for all your photos and
+                            documents.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 899</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/T-shirt.webp" alt="T-shirt" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">👕 Classic Cotton T-Shirt</h2>
+                        <p>100% breathable cotton for maximum comfort. Available in multiple colors and sizes.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 850</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Sunglass.webp" alt="Sunglass" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">🕶️ Polarized Aviator Shades</h2>
+                        <p>Protect your eyes with UV400 lenses and a sleek, modern frame. Includes a protective case.
+                        </p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,490</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/iPhone17promaxcase.webp" alt="iPhone Case"
+                            class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">🛡️ Clear Protective Case</h2>
+                        <p>Heavy-duty clear case designed specifically for the iPhone 17 Pro Max. Shock-absorbent
+                            material.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,199</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Earphone.webp" alt="Earphone" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">🎧 Wireless Noise Cancelling Earbuds</h2>
+                        <p>Crystal clear audio quality with comfortable fit and $24$ hours of total play time.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 3,750</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Camerawebp.webp" alt="Camera" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">📸 Pro DSLR Camera Kit</h2>
+                        <p>Capture stunning photos and $4K$ videos. Ideal for both beginners and professional
+                            photographers.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 55,000</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Google-Pixel-10.jpg" alt="Google Pixel" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">📱 Google Pixel 10</h2>
+                        <p>Powered by the next-gen Tensor chip, featuring the best AI photography tools on the market.
+                        </p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 95,990</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Samsung S25 ultra.webp" alt="Samsung S25"
+                            class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">📱 Samsung Galaxy S25 Ultra</h2>
+                        <p>Unmatched $200$ MP camera system and built-in S Pen. The ultimate productivity and
+                            photography powerhouse.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,79,000</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 w-full shadow-xl hover:scale-105 transition duration-300">
+                    <figure class="h-56">
+                        <img src="image/Pant.webp" alt="Pant" class="w-full h-full object-contain" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">👖 Slim Fit Chinos</h2>
+                        <p>Comfortable stretch fabric for all-day wear. Perfect for office or smart-casual outings.
+                            Available in multiple colours.</p>
+                        <div class="card-actions justify-between items-center">
+                            <p class="text-xl font-bold text-green-600">BDT 1,899</p>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer review -->
+        <section id="review">
+            <h1 class="text-center text-4xl lg:text-6xl font-bold m-20">What Our Customers Say</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 m-5 gap-5 ">
+
+                <div class="border border-black max-w-md mx-auto p-6 rounded-xl">
+                    <div class="h-32 w-32 mx-auto">
+                        <img src="image/Man1.webp" alt="Customer Photo" class="rounded-full w-full h-full object-cover">
+                    </div>
+
+                    <p class="text-lg italic text-gray-700 text-center mt-4">
+                        "The **quality of the materials** far exceeded my expectations for the price. I especially
+                        appreciate the craftsmanship of their rings and bracelets. Truly a premium experience."
+                    </p>
+
+                    <div class="rating flex justify-center mt-3">
+                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="radio" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="radio" class="mask mask-star-2 bg-yellow-400" disabled />
+                    </div>
+                    <h2 class="card-title justify-center mt-4 text-primary text-center">Abdullah Khan</h2>
+                    <p class="text-sm text-gray-500 text-center">Dhaka, Bangladesh</p>
+                </div>
+
+                <div class="border border-black max-w-md mx-auto p-6 rounded-xl">
+                    <div class="h-32 w-32 mx-auto">
+                        <img src="image/man2.jpeg" alt="Customer Photo" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <p class="text-lg italic text-gray-700 text-center mt-4">
+                        "Incredible service! My order arrived in less than three days, and the packaging was excellent.
+                        The team was responsive and helpful throughout the entire process. **Highly recommend!**"
+                    </p>
+                    <div class="rating flex justify-center mt-3">
+                        <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-400" disabled />
+                    </div>
+                    <h2 class="card-title justify-center mt-4 text-primary text-center">Omar Haque</h2>
+                    <p class="text-sm text-gray-500 text-center">Chittagong, Bangladesh</p>
+                </div>
+                <div class="border border-black max-w-md mx-auto p-6 rounded-xl">
+                    <div class="h-32 w-32 mx-auto">
+                        <img src="image/man3.webp" alt="Customer Photo" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <p class="text-lg italic text-gray-700 text-center mt-4">
+                        "I was looking for a modern yet affordable **smartwatch** and found the perfect fit here. It
+                        connects seamlessly, and the design is sleek. It's the best tech purchase I've made this year."
+                    </p>
+
+                    <div class="rating flex justify-center mt-3">
+                        <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-400" checked disabled />
+                        <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-400" disabled />
+                    </div>
+
+                    <h2 class="card-title justify-center mt-4 text-primary text-center">Sabbir Rahman</h2>
+                    <p class="text-sm text-gray-500 text-center">Rajshahi, Bangladesh</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- cart -->
+        <section class="px-8 lg:px-20 py-10 bg-base-200 h-full" id="cart">
+            <h1 class="text-center text-4xl lg:text-6xl font-bold mb-10 text-green-700">🛒 Shopping Cart</h1>
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-2xl">
+
+                <div class="flex justify-between items-center pt-4">
+                    <span class="text-2xl font-bold text-gray-800">Total:</span>
+                    <span id="cart-total" class="text-3xl font-extrabold text-green-600">BDT 0</span>
+                </div>
+
+                <button class="btn btn-success btn-lg btn-block mt-6 text-white text-xl">
+                    Proceed to Checkout
+                </button>
+                <p class="text-center text-sm text-gray-500 mt-2">Shipping fees will be calculated at checkout.</p>
+            </div>
+        </section>
+        <!-- About -->
+        <section id="about">
+            <div>
+                <h1 class="text-center text-4xl lg:text-6xl font-bold m-20">About NexBuy</h1>
+                <div class="rounded-3xl shadow-xl border-t-4 border-green-500 w-[90%]  lg:w-[70%] mx-auto ">
+                    <p class=" text-xl p-5"> <span class="font-bold">💡 Our Philosophy:</span> Redefining
+                        Value
+                        At NexBuy, our mission is simple: deliver premium quality and accessible pricing across every
+                        product, from finely crafted jewelry to reliable electronics. We believe you shouldn't have to
+                        compromise. We are not a big-box store; we are a curator. Every single item is hand-picked and
+                        thoroughly tested to ensure it meets our rigorous standards for durability, functionality, and
+                        elegant design. By working directly with trusted sources, we eliminate middlemen, ensuring you
+                        always get the best value and a truly satisfying shopping experience.
+                        <br>
+                        <br>
+                        <br>
+
+                        <span class="font-bold">🔍 The NexBuy Difference: Trust and Transparency</span>
+                        The NexBuy experience extends beyond the transaction. We offer a personalized and transparent
+                        shopping environment where your satisfaction is our highest priority. Our team is passionate
+                        about finding items that offer a perfect blend of form and function. This obsession with quality
+                        means we reject countless products before selecting the one that earns the NexBuy stamp of
+                        approval. When you choose us, you’re not just buying a product—you're investing in an item that
+                        has been vetted for longevity. Because we stand by the quality of our curated collection, every
+                        purchase is backed by our dedicated customer support and a comprehensive warranty. We’re not
+                        just selling products; we're investing in your long-term satisfaction. Choose NexBuy and invest
+                        in items designed to be cherished and used for years to come, confirming that premium quality is
+                        an achievable standard, not a luxury.
+                        <br>
+                        <br>
+                        <br>
+
+                        <span class="font-bold">✨ Shop Smarter, Not Harder</span>
+                        We know your time is valuable. That’s why we’ve streamlined the selection process, so you don't
+                        have to wade through thousands of mediocre options. Our carefully chosen inventory means you can
+                        shop with confidence, knowing that whichever item you select is a top-tier performer in its
+                        class. From the moment you browse our site to the moment your item arrives beautifully packaged
+                        at your door, we ensure a seamless and delightful journey. NexBuy is where mindful shopping
+                        meets exceptional value..
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact US -->
+        <section id="contact">
+            <h1 class="text-center text-4xl lg:text-6xl font-bold m-20">Contact US</h1>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-green-500  lg:w-[50%] lg:mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                <form class="space-y-6 ">
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium text-gray-700 mb-1">Your Full
+                            Name</label>
+                        <input type="text" id="full-name" name="full-name" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm"
+                            placeholder=" Your Full Name">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm"
+                                placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm"
+                                placeholder="e.g., Product or Delivery Inquiry">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your
+                                Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm"
+                                placeholder="Write the details..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-green-500 hover:bg-white hover:text-green-500  transform hover:scale-[1.01]">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class=" bg-black text-yellow-600 p-10">
+        <div class="footer">
+            <nav>
+                <h6 class="footer-title">Services</h6>
+                <a class="link link-hover">Branding</a>
+                <a class="link link-hover">Design</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Advertisement</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Company</h6>
+                <a class="link link-hover " href="#home">Home</a>
+                <a class="link link-hover" href="#products">Products</a>
+                <a class="link link-hover" href="#review">Reviews</a>
+                <a class="link link-hover" href="">Cart</a>
+                <a class="link link-hover" href="#about">About US</a>
+                <a class="link link-hover" href="#contact">Contact</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Social</h6>
+                <div class="grid grid-flow-col gap-4">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+
+            </nav>
+        </div>
+        <p class="text-center mt-11">
+            &copy; 2025 E-Commerce Solutions. All rights reserved.
+
+        </p>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
